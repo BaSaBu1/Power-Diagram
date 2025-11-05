@@ -1,0 +1,108 @@
+---
+title: "Power Diagrams: Exploration on Weighted Voronoi"
+author: 
+  - name: Batsambuu Batbold
+    affiliation: 
+  - name: Christopher Enberg
+    affiliation: 
+  - name: Blake Kell
+    affiliation:
+date: today
+format: 
+  html:
+    theme: cosmo 
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    self-contained: true
+    code-tools: true
+    code-fold: true
+---
+
+## Introduction
+
+This project explores a different version of a Voronoi Diagram: what happens when the sites are not all treated equally?
+
+In many real-world scenarios, locations have different levels of "size" or "power." A large hospital serves a wider area than a small clinic, or a hypermarket offers a wider range of options than a small grocery store. To model this, our project explores **Weighted Voronoi Diagrams**, which give weight to the sites according to their importance.
+
+We mostly use *Euclidean* distance when constructing a Voronoi Diagram, which assumes the weights of the sites are equal. To move beyond this, we must give away Euclidean distance and consider another type of distance measurement that takes the different weights of the sites into account. Out of such variations, we will focus on the **Power Diagram**, which is based on the **Power** of a point.
+
+
+## Power Diagrams
+
+### 1. The Power of a Point
+
+The power of a point $P$ with respect to a circle $\omega$ with center $O$ and radius $r$ is defined as:
+
+$$
+\text{Pow}_\omega(P) = OP^2 - r^2
+$$
+Thus, if we think of the sites as centers of circles and the weights as their radii, then we can use the power of a point as our "distance" between the point and the site. 
+
+Here, notice that $OP^2$ is the squared Euclidean distance between the site and a point. A bigger radius (weight) reduces this "distance" by subtracting a larger value, which gives the site more range. For example (Figure $1$), if we have two sites with different weights and a point at an equal Euclidean distance from each site, the point will belong to the site with a larger radius (the larger weight).
+
+![$\text{Figure } 1$: Point $P$ is at an equal Euclidean distance $d$ from both sites $O_1$ and $O_2$. Because the radius (weight) $r_2$ is greater than $r_1$, $P$'s "power distance" to $O_2$ is smaller, and it belongs to the red site's region.](fig1.png){width="50%"}
+
+### 2. The Radical Axis
+
+In a standard Voronoi diagram, the Voronoi edges are the perpendicular bisector between two sites because that's where Euclidean distances are equal. Similarly, we define the edges of a Power Diagram as the set of points where the power is equal for two circles:
+
+$$
+Pow_{\omega_1}(P) = Pow_{\omega_2}(P)
+$$
+This set of points is called the **Radical Axis** of the circles. The following two theorems about the Radical Axis demonstrate why this is such a robust choice.
+
+:::{.callout-note title="Radical Axis Theorem"}
+Let $\omega_1$ and $\omega_2$ be circles with distinct centers $O_1$ and $O_2$. The radical axis of $\omega_1$ and $\omega_2$ is a straight line perpendicular to $O_1O_2$.
+
+![$\text{Figure } 2$: The radical axis (green line) represents the set of points with equal power to $\omega_1$ and $\omega_2$. As the theorem states, this axis is a straight line and is perpendicular to the line of centers $O_1O_2$ (gray dashed line).](fig2.png){width="50%"}
+:::
+
+This means that, just like a perpendicular bisector, the radical axis also divides the plane into two half-planes.
+
+:::{.callout-note title="Radical Axis Concurrence Theorem"}
+The three pairwise radical axes of three circles concur at a point, called the **Radical Center**.
+
+![$\text{Figure } 3$: The three pairwise radical axes (green, orange, and purple lines) of the circles $\omega_1$, $\omega_2$, and $\omega_3$ are all concurrent (intersect) at a single point, which we call the **Radical Center**.](fig3.png){width="50%"}
+:::
+
+Again, this theorem gives us the position of the Voronoi vertices. Ultimately, these two theorems suggest that the resulting power diagram will have a similar regional structure to a regular Voronoi diagram.
+
+### 3. The Power Diagram
+
+More formally, we define the **Power region $\text{Pow}(s)$** of a site $s \in S$ with a weight of $r_s$ as:
+
+$$
+\begin{align*}
+\text{Pow}(s) = \{x \in \mathbb{R}^2 \ | \ \text{Pow}_{\omega_s}(x) \le \text{Pow}_{\omega_q}(x) \text{ for all } q \in S \}, 
+\\
+\text{ where } \omega_i \text{ is the circle centered at } i \text{ with radius of } r_i
+\end{align*}
+$$
+
+Thus, the Power diagram is a collection of these regions. To explore the properties of the power diagram, we generate the Power Diagrams for a set of sites.
+
+
+
+## Visual Demonstration
+
+### Standard Voronoi
+
+### Weighted Voronoi
+
+### Observation
+
+
+
+## Conclusion
+
+### Summary
+
+### Real-World Applications
+
+
+---
+
+## Project Code Repository
+
+[**Link to the GitHub repository**]()
