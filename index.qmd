@@ -105,4 +105,4 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 ## Project Code Repository
 
-[**Link to the GitHub repository**]()
+[**Link to the GitHub repository**](https://github.com/BaSaBu1/Power-Diagram)
