@@ -56,7 +56,43 @@ This set of points is called the **Radical Axis** of the circles. The following 
 Let $\omega_1$ and $\omega_2$ be circles with distinct centers $O_1$ and $O_2$. The radical axis of $\omega_1$ and $\omega_2$ is a straight line perpendicular to $O_1O_2$.
 
 ![$\text{Figure } 2$: The radical axis (green line) represents the set of points with equal power to $\omega_1$ and $\omega_2$. As the theorem states, this axis is a straight line and is perpendicular to the line of centers $O_1O_2$ (gray dashed line).](fig2.png){width="50%"}
+
+<details>
+  <summary>Click to see Proof</summary>
+  Let $P = (x, y)$ be any point on the radical axis. Let the centers be $O_1 = (x_1, y_1)$ and $O_2 = (x_2, y_2)$,     with radii $r_1$ and $r_2$.
+  
+  By the definition of the radical axis, the power is equal for both circles:
+  $$
+  \begin{align}
+  \text{Pow}_{\omega_1}(P) &= \text{Pow}_{\omega_2}(P)  \\ \Rightarrow
+  (x - x_1)^2 + (y - y_1)^2 - r_1^2 &= (x - x_2)^2 + (y - y_2)^2 - r_2^2
+  \end{align}
+  $$
+  
+  After expanding the squared terms:
+  $$(x^2 - 2xx_1 + x_1^2) + (y^2 - 2yy_1 + y_1^2) - r_1^2 = (x^2 - 2xx_2 + x_2^2) + (y^2 - 2yy_2 + y_2^2) - r_2^2$$
+  
+  Notice that the $x^2$ and $y^2$ terms on both sides cancel out, leaving a linear equation.
+  $$ 
+  \begin{align}
+  - 2xx_1 + x_1^2 - 2yy_1 + y_1^2 - r_1^2 = - 2xx_2 + x_2^2 - 2yy_2 + y_2^2 - r_2^2  \\ \Rightarrow 
+  2(x_2 - x_1)x + 2(y_2 - y_1)y + (x_1^2 + y_1^2 - r_1^2 - x_2^2 - y_2^2 + r_2^2) = 0
+  \end{align} 
+  $$
+  
+  Since $O_1$ and $O_2$ are distinct, at least one of $(x_2 - x_1)$ or $(y_2 - y_1)$ is non-zero. Thus, the above      equation is one of a **straight line**.
+  
+  Furthermore, the slope of this line is:
+  $$m_{\text{axis}} = \frac{-2(x_2 - x_1)}{2(y_2 - y_1)} = -\frac{x_2 - x_1}{y_2 - y_1}$$
+  
+  The slope of the line of centers $O_1O_2$ is:
+  $$m_{\text{centers}} = \frac{y_2 - y_1}{x_2 - x_1}$$
+  
+  It follows that the product of the slopes is $m_{\text{axis}} \times m_{\text{centers}} = -1$. Therefore, the        radical axis is **perpendicular** to the line of centers. $\blacksquare$
+</details>
 :::
+
+
 
 This means that, just like a perpendicular bisector, the radical axis also divides the plane into two half-planes.
 
@@ -64,6 +100,31 @@ This means that, just like a perpendicular bisector, the radical axis also divid
 The three pairwise radical axes of three circles concur at a point, called the **Radical Center**.
 
 ![$\text{Figure } 3$: The three pairwise radical axes (green, orange, and purple lines) of the circles $\omega_1$, $\omega_2$, and $\omega_3$ are all concurrent (intersect) at a single point, which we call the **Radical Center**.](fig3.png){width="50%"}
+
+<details>
+  <summary>Click to see Proof</summary>
+
+  Let the three circles be $\omega_1$, $\omega_2$, and $\omega_3$.
+
+  Let $L_{12}$ be the radical axis of $\omega_1$ and $\omega_2$. By definition, for any point $P \in L_{12}$, we      have:
+    $$\text{Pow}_{\omega_1}(P) = \text{Pow}_{\omega_2}(P)$$
+
+  Let $L_{23}$ be the radical axis of $\omega_2$ and $\omega_3$. For any point $P \in L_{23}$:
+    $$\text{Pow}_{\omega_2}(P) = \text{Pow}_{\omega_3}(P)$$
+
+  Now, consider the point $P_{\text{center}}$ where $L_{12}$ and $L_{23}$ intersect. (We can assume the general position where they are not parallel).
+  
+ Since $P_{\text{center}} \in L_{12}$, we know:
+      $$\text{Pow}_{\omega_1}(P_{\text{center}}) = \text{Pow}_{\omega_2}(P_{\text{center}})$$
+        
+ Since $P_{\text{center}} \in L_{23}$, we also know:
+      $$\text{Pow}_{\omega_2}(P_{\text{center}}) = \text{Pow}_{\omega_3}(P_{\text{center}})$$
+      
+By the transitive property, it follows that:
+  $$\text{Pow}_{\omega_1}(P_{\text{center}}) = \text{Pow}_{\omega_3}(P_{\text{center}})$$
+    
+  Therefore, the intersection point $P_{\text{center}}$ *must* also be on the third radical axis, $L_{13}$, which      follow that all three lines pass through the same point. $\blacksquare$
+</details>
 :::
 
 Again, this theorem gives us the position of the Voronoi vertices. Ultimately, these two theorems suggest that the resulting power diagram will have a similar regional structure to a regular Voronoi diagram.
