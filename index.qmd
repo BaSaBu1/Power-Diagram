@@ -153,13 +153,30 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 ### Observation
 
+From the figures above, we can see one of the main differences between Standard Voronoi Diagrams and Weighted Voronoi diagrams: Voronoi regions no longer require a site from $S$ to be located inside each one. 
+
+Depending on the weights of nearby sites and hoe close they are to one another, Voronoi regions within the Power Diagram can possibly contain either no or multiple sites of $S$.
+
+If we consider weights as some sort of popularity or overall size, this phenomenon starts to make more sense - If you're in range of a site that can accommodate more of your needs, you're more likely to go to that site even if there are smaller ones closer to you. 
+
 
 
 ## Conclusion
 
 ### Summary
 
+In this project, we have discussed what it means to create a Power diagram, and how their construction is equivalent to a Voronoi diagram. We adapted a standard Voronoi region algorithm to utilize this new measure, and analyzed how the two diagrams differ from one other. 
+
+This allows us to better understand how we can adapt Voronoi diagrams based on different metrics of distance aside from Euclidean distance, while also providing some more insight into how we can apply Voronoi diagrams within other fields.
+
+
 ### Real-World Applications
+
+Some areas that utilize Weighted Voronoi Diagrams include:
+* Geographical Information Systems: Determine aspects of human geography at cities
+* Economic/Infrastructure modelling: Determine locations for industry or services 
+* Crystallography: Create models of crystals growing at various times
+* Art: Generate stipple drawings within computer programs
 
 
 ---

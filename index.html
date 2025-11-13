@@ -9,7 +9,7 @@
 <meta name="author" content="Batsambuu Batbold">
 <meta name="author" content="Christopher Enberg">
 <meta name="author" content="Blake Kell">
-<meta name="dcterms.date" content="2025-11-10">
+<meta name="dcterms.date" content="2025-11-12">
 
 <title>Power Diagrams: Exploration on Weighted Voronoi</title>
 <style>
@@ -2366,7 +2366,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2025</p>
+      <p class="date">November 12, 2025</p>
     </div>
   </div>
   
@@ -2506,15 +2506,21 @@ Therefore, the intersection point <span class="math inline">\(P_{\text{center}}\
 </section>
 <section id="observation" class="level3">
 <h3 class="anchored" data-anchor-id="observation">Observation</h3>
+<p>From the figures above, we can see one of the main differences between Standard Voronoi Diagrams and Weighted Voronoi diagrams: Voronoi regions no longer require a site from <span class="math inline">\(S\)</span> to be located inside each one.</p>
+<p>Depending on the weights of nearby sites and hoe close they are to one another, Voronoi regions within the Power Diagram can possibly contain either no or multiple sites of <span class="math inline">\(S\)</span>.</p>
+<p>If we consider weights as some sort of popularity or overall size, this phenomenon starts to make more sense - If you’re in range of a site that can accommodate more of your needs, you’re more likely to go to that site even if there are smaller ones closer to you.</p>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <section id="summary" class="level3">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>In this project, we have discussed what it means to create a Power diagram, and how their construction is equivalent to a Voronoi diagram. We adapted a standard Voronoi region algorithm to utilize this new measure, and analyzed how the two diagrams differ from one other.</p>
+<p>This allows us to better understand how we can adapt Voronoi diagrams based on different metrics of distance aside from Euclidean distance, while also providing some more insight into how we can apply Voronoi diagrams within other fields.</p>
 </section>
 <section id="real-world-applications" class="level3">
 <h3 class="anchored" data-anchor-id="real-world-applications">Real-World Applications</h3>
+<p>Some areas that utilize Weighted Voronoi Diagrams include: * Geographical Information Systems: Determine aspects of human geography at cities * Economic/Infrastructure modelling: Determine locations for industry or services * Crystallography: Create models of crystals growing at various times * Art: Generate stipple drawings within computer programs</p>
 <hr>
 </section>
 </section>
@@ -3132,20 +3138,37 @@ Therefore, the intersection point <span class="math inline">\(P_{\text{center}}\
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Observation</span></span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>From the figures above, we can see one of the main differences between Standard Voronoi Diagrams and Weighted Voronoi diagrams: Voronoi regions no longer require a site from $S$ to be located inside each one. </span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Depending on the weights of nearby sites and hoe close they are to one another, Voronoi regions within the Power Diagram can possibly contain either no or multiple sites of $S$.</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>If we consider weights as some sort of popularity or overall size, this phenomenon starts to make more sense - If you&#39;re in range of a site that can accommodate more of your needs, you&#39;re more likely to go to that site even if there are smaller ones closer to you. </span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### Real-World Applications</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project Code Repository</span></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Link to the GitHub repository**</span><span class="co">](https://github.com/BaSaBu1/Power-Diagram)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>In this project, we have discussed what it means to create a Power diagram, and how their construction is equivalent to a Voronoi diagram. We adapted a standard Voronoi region algorithm to utilize this new measure, and analyzed how the two diagrams differ from one other. </span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>This allows us to better understand how we can adapt Voronoi diagrams based on different metrics of distance aside from Euclidean distance, while also providing some more insight into how we can apply Voronoi diagrams within other fields.</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Real-World Applications</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Some areas that utilize Weighted Voronoi Diagrams include:</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Geographical Information Systems: Determine aspects of human geography at cities</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Economic/Infrastructure modelling: Determine locations for industry or services </span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Crystallography: Create models of crystals growing at various times</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Art: Generate stipple drawings within computer programs</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project Code Repository</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Link to the GitHub repository**</span><span class="co">](https://github.com/BaSaBu1/Power-Diagram)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
