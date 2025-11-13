@@ -47,7 +47,7 @@ Here, notice that $OP^2$ is the squared Euclidean distance between the site and 
 In a standard Voronoi diagram, the Voronoi edges are the perpendicular bisector between two sites because that's where Euclidean distances are equal. Similarly, we define the edges of a Power Diagram as the set of points where the power is equal for two circles:
 
 $$
-Pow_{\omega_1}(P) = Pow_{\omega_2}(P)
+\text{Pow}_{\omega_1}(P) = \text{Pow}_{\omega_2}(P)
 $$
 This set of points is called the **Radical Axis** of the circles. The following two theorems about the Radical Axis demonstrate why this is such a robust choice.
 
