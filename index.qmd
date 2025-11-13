@@ -146,7 +146,7 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 
 ## Visual Demonstration
-
+![$\text{Figure } 3$: Comparision between unweighted and weighted Voronoi diagrams](unweighted_vs_weighted.png.png){width="50%"}
 ### Standard Voronoi
 
 ### Weighted Voronoi
