@@ -148,10 +148,51 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 ## Algorithm
 
-```{python}
-#| eval: false
+```{pseudocode}
+FUNCTION weighted_delaunay(input_points):
 
-5 + 4
+    // 1. Initialization
+    // Create a bounding triangle that is guaranteed to contain all input points.
+    super_triangle = CREATE_SUPER_TRIANGLE(input_points)
+    
+    // The triangulation starts with just this single, large triangle.
+    triangulation = [super_triangle]
+
+    // 2. Incremental Insertion Loop
+    // Process each site one by one, adding it to the triangulation.
+    FOR EACH point IN input_points:
+
+        bad_triangles = [] // Triangles whose power circle contains the point
+        
+        // a. Find all "bad" triangles
+        FOR EACH triangle IN triangulation:
+            IF point IS INSIDE triangle.power_circle():
+                ADD triangle TO bad_triangles
+        
+        // b. Find the boundary of the polygonal cavity
+        boundary_edges = []
+        FOR EACH triangle IN bad_triangles:
+            FOR EACH edge OF triangle:
+                IF edge IS NOT SHARED by any other triangle in bad_triangles:
+                    ADD edge TO boundary_edges
+
+        // c. Remove bad triangles and re-triangulate the cavity
+        REMOVE all triangles in bad_triangles FROM triangulation
+        
+        FOR EACH edge IN boundary_edges:
+            new_triangle = CREATE_TRIANGLE(edge.vertex1, edge.vertex2, point)
+            ADD new_triangle TO triangulation
+
+    // 3. Cleanup
+    // Remove any triangles from the final list that are connected to the
+    // vertices of the initial super-triangle.
+    final_triangulation = []
+    FOR EACH triangle IN triangulation:
+        IF triangle DOES NOT SHARE vertices with super_triangle:
+            ADD triangle TO final_triangulation
+
+    // 4. Return the result
+    RETURN final_triangulation
 ```
 
 ### Visual Demonstration
