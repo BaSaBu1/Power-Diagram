@@ -17,6 +17,7 @@ format:
     self-contained: true
     code-tools: true
     code-fold: true
+jupyter: python3
 ---
 
 ## Introduction
@@ -145,11 +146,17 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 
 
-## Visual Demonstration
-![$\text{Figure } 3$: Comparision between unweighted and weighted Voronoi diagrams](unweighted_vs_weighted.png.png){width="50%"}
-### Standard Voronoi
+## Algorithm
 
-### Weighted Voronoi
+```{python}
+#| eval: false
+
+5 + 4
+```
+
+### Visual Demonstration
+
+![$\text{Figure } 4$: Comparision between unweighted and weighted Voronoi diagrams](unweighted_vs_weighted.png){width="100%"}
 
 ### Observation
 
@@ -173,6 +180,7 @@ This allows us to better understand how we can adapt Voronoi diagrams based on d
 ### Real-World Applications
 
 Some areas that utilize Weighted Voronoi Diagrams include:
+
 * Geographical Information Systems: Determine aspects of human geography at cities
 * Economic/Infrastructure modelling: Determine locations for industry or services 
 * Crystallography: Create models of crystals growing at various times
