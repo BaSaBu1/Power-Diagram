@@ -2,12 +2,10 @@
 title: "Power Diagrams: Exploration on Weighted Voronoi"
 author: 
   - name: Batsambuu Batbold
-    affiliation: 
   - name: Christopher Enberg
-    affiliation: 
   - name: Blake Kell
-    affiliation:
 date: today
+fontsize: 1.2em
 format: 
   html:
     theme: cosmo 
@@ -42,7 +40,7 @@ Thus, if we think of the sites as centers of circles and the weights as their ra
 
 Here, notice that $OP^2$ is the squared Euclidean distance between the site and a point. A bigger radius (weight) reduces this "distance" by subtracting a larger value, which gives the site more range. For example (Figure $1$), if we have two sites with different weights and a point at an equal Euclidean distance from each site, the point will belong to the site with a larger radius (the larger weight).
 
-![$\text{Figure } 1$: Point $P$ is at an equal Euclidean distance $d$ from both sites $O_1$ and $O_2$. Because the radius (weight) $r_2$ is greater than $r_1$, $P$'s "power distance" to $O_2$ is smaller, and it belongs to the red site's region.](fig1.png){width="50%"}
+![$\text{Figure } 1$: Point $P$ is at an equal Euclidean distance $d$ from both sites $O_1$ and $O_2$. Because the radius (weight) $r_2$ is greater than $r_1$, $P$'s "power distance" to $O_2$ is smaller, and it belongs to the red site's region.](figures/fig1.png){width="50%"}
 
 ### 2. The Radical Axis
 
@@ -56,7 +54,7 @@ This set of points is called the **Radical Axis** of the circles. The following 
 :::{.callout-note title="Radical Axis Theorem"}
 Let $\omega_1$ and $\omega_2$ be circles with distinct centers $O_1$ and $O_2$. The radical axis of $\omega_1$ and $\omega_2$ is a straight line perpendicular to $O_1O_2$.
 
-![$\text{Figure } 2$: The radical axis (green line) represents the set of points with equal power to $\omega_1$ and $\omega_2$. As the theorem states, this axis is a straight line and is perpendicular to the line of centers $O_1O_2$ (gray dashed line).](fig2.png){width="50%"}
+![$\text{Figure } 2$: The radical axis (green line) represents the set of points with equal power to $\omega_1$ and $\omega_2$. As the theorem states, this axis is a straight line and is perpendicular to the line of centers $O_1O_2$ (gray dashed line).](figures/fig2.png){width="50%"}
 
 <details>
   <summary>Click to see Proof</summary>
@@ -100,7 +98,7 @@ This means that, just like a perpendicular bisector, the radical axis also divid
 :::{.callout-note title="Radical Axis Concurrence Theorem"}
 The three pairwise radical axes of three circles concur at a point, called the **Radical Center**.
 
-![$\text{Figure } 3$: The three pairwise radical axes (green, orange, and purple lines) of the circles $\omega_1$, $\omega_2$, and $\omega_3$ are all concurrent (intersect) at a single point, which we call the **Radical Center**.](fig3.png){width="50%"}
+![$\text{Figure } 3$: The three pairwise radical axes (green, orange, and purple lines) of the circles $\omega_1$, $\omega_2$, and $\omega_3$ are all concurrent (intersect) at a single point, which we call the **Radical Center**.](figures/fig3.png){width="50%"}
 
 <details>
   <summary>Click to see Proof</summary>
@@ -147,6 +145,8 @@ Thus, the Power diagram is a collection of these regions. To explore the propert
 
 
 ## Algorithm
+
+Below is the main idea of the algorithm for constructing a power diagram:
 
 ```{python}
 #| eval: false
@@ -200,9 +200,11 @@ FUNCTION weighted_delaunay(input_points):
     RETURN final_triangulation
 ```
 
+The full `Python` implementation, including the unweighted Voronoi diagram and the code generating the figures below, is available in the GitHub repository linked at the bottom of this page.
+
 ### Visual Demonstration
 
-![$\text{Figure } 4$: Comparison between unweighted and weighted Voronoi diagrams](unweighted_vs_weighted.png){width="100%"}
+![$\text{Figure } 4$: Comparison between unweighted and weighted Voronoi diagrams](figures/unweighted_vs_weighted.png){width="100%"}
 
 ### Observation
 
